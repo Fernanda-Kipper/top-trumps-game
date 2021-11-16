@@ -1,0 +1,32 @@
+C2;Taça da Margura;Taça de Vidro: quando quebarada, é derretida e reutilizada.;Vidro;verde;1000000;600;sim
+C3;Elétrico;Lâmpada: apesar do vidro, essa não pode ser reciclada, pois libera substâncias tóxicas.;Vidro;verde;1000000;850;não
+C4;Sr. Vidro;Garrafa de Vidro: pode ser derretida ou usada como decoração.;Vidro;verde;1000000;800;sim
+D1;Goma Mutante;Chiclete: derivado do petróleo. Não tem reaproveitamento.;Não Reciclável;cinza;5;900;não
+D2;Fraldomau;Fralda: item que prejudica os coletores quando misturado com demais tipos de lixo.;Não Reciclável;cinza;120;800;não
+D3;Fire Fosfer;Palito de Fósforo: apesar da maior parte ser madeira, não é reciclével.;Não Reciclável;cinza;0.5;600;não
+D4;Robô Pilhado;Pilhas: após o uso, leve em postos de coletas especializados.;Pilhas/Baterias Perigosos;laranja;500;650;não
+E1;Auto Bate;Baterias de Automóveis: após o uso, leve em postos de coletas especializadas.;Pilhas/Baterias Perigosos;laranja;9999999;950;não
+E2;Volter Bad;Baterias 9Volts: após o uso, leve em postos de coletas especializados.;Pilhas/Baterias Perigosos;laranja;500;700;não
+A1;Petão;Garrafa PET: pode ser usada para confecção de artesanatos.;Plástico;vermelho;450;500;sim
+A2;Sacolástico;Sacola Plástica: é considerada uma das maiores causadoras de poluição no Brasil e no mundo.;Plástico;vermelho;400;400;sim
+A3;Isoterman;Caixa Térmica de Isopor: por incrível que pareça, o isopor é derivado do plástico.;Plástico;vermelho;120;350;sim
+A4;Papel Bolado;Bola de Papel: um dos lixos mais produzidos por estudantes.;Papel;azul;0.5;550;sim
+B1;Caixolão;Caixa de Papel: utilizada para embalar produtos, é sempre descartada.;Papel;azul;0.5;300;sim
+B2;Nerd Paper;Jornal: possui várias utilidades após seu uso. Também pode ser reciclado facilmente.;Papel;azul;0.2;150;sim
+B3;Frígido;Panela Sem Cabo: é aproveitada para vérios fins. Pode ser derretida.;Metal;amarelo;500;400;sim
+B4;Mr. Tampinha;Tampinha de Garrafa: é popular na confecção de artesanatos.;Metal;amarelo;300;350;sim
+C1;MC Lata;Lata de Refrigerante: é popularmente recolhida para a geração de renda.;Metal;amarelo;450;450;sim
+E3;Bigapple;Resto da Maça: seu destino é o lixo orgânico. Pode ser usada como adubo.;Orgânico;marrom;0.25;400;não
+E4;Cascana;Casca de Banana: pode ser usada para a descontaminação da água.;Orgânico;marrom;0.1;300;não
+F1;Burgman;Restos de Alimentos: conhecido também como lixo molhado, pode ser usado como adubo.;Orgânico;marrom;0.4;350;não
+F2;Mutagênico;Polônio: apesar do desenho, esse metal é encontrado de forma sólida na natureza. Pode causar câncer.;Radioativo;roxo;300;700;não
+F3;Gangue Contraste;Contraste para Radiologia: raio é aplicado nas pessoas para melhorar a visibilidade no raio-x.;Radioativo;roxo;250;800;não
+F4;Urânium;Urânio: metal radioativo que recebeu esse nome devido ao planeta urânio.;Radioativo;roxo;380;1000;não
+G1;Dr. Seringa;Seringas Usadas: devem ser incineradas e não podem ser coletadas com lixos de outros tipos.;Ambulatoriais Hospitalares;branco;150;350;não
+G2;Luvaldo;Luva de Borracha/Plástico: por ser um resíduo hospitalar, deve ser incinerada.;Ambulatoriais Hospitalares;branco;130;250;não
+G3;Bandelóid;Curativo Autocolante: por ficar em contato com ferimentos, deve ser incinerada.;Ambulatoriais Hospitalares;branco;100;200;não
+G4;Irmãos Palitos;Palito de Madeira: pode ser reutilizado para vários fins.;Madeira;preto;0.5;300;sim
+H1;Portossauro;Porta de Madeira: geralmente, é substituída por uma mais nova, é reaproveitável!;Madeira;preto;10;700;sim
+H2;Cara de Pau;Madeira Pintada: geralmente sobre de restos de construções.;Madeira;preto;13;600;sim
+H3;Dom Laton;Lata de Lixo: é encontrada praticamente em todos os lugares, faça uso dela!;Coletor de Lixo;maior;9999999;850;não
+H4;Super Pneu;Pneu de Borracha: recolhimento específico. Reutilizado para pavimentação asfáltica.;Composto Reciclável;menor;600;950;sim
