@@ -54,11 +54,11 @@ import java.util.Arrays;
             
             // escolhe aleatoriamente o jogador que irá iniciar
             Random random = new Random();
-            int numero = random.nextInt(1);
+            int numero = random.nextInt(9);
             Jogador vencedorDaRodada;
             Jogador perdedorDaRodada;
             
-            if (numero == 0){
+            if (numero%2 == 0){
                 vencedorDaRodada = player1;
                 perdedorDaRodada = player2;
             }
@@ -76,7 +76,7 @@ import java.util.Arrays;
             int fimDeJogo = 0;
             while (fimDeJogo < 1) {
                 
-                System.out.println("O jogador: " + vencedorDaRodada.nome() + " tem a vez, sua carta é: \n");
+                System.out.println("\n\n\t\tO jogador: " + vencedorDaRodada.nome() + " tem a vez, sua carta é: \n");
                 System.out.println(vencedorDaRodada.getCarta().toString());
 
                 System.out.println("Qual atributo o jogador deseja escolher: \n\t[1]Cor\n\t[2]Decomposição\n\t[3]Reciclagem\n\t[4]Ataque\n\t[5]Sair");
