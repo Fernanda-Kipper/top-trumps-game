@@ -1,7 +1,7 @@
 <h1 align="center"><img align="center" src="./public/supertrunfo.png" width="300"></h1>
 
 <p align="center">
- <a href="#tech">Authors</a> • 
+ <a href="#authors">Contributors</a> • 
  <a href="#clone">Clone</a> • 
  <a href="#contribute">Contribute</a> •
  <a href="#license">License</a>
@@ -12,16 +12,17 @@
 </p>
 <p align="center">
    <img src="./public/cartas.png" width="600px">
-   <img src="./public/results.png" width="400px">
-   <img src="./public/recommended.png" width="400px">
 </p>
 
 
-<h2 id="tech">Technologies</h2>
+<h2 id="authors">Contributors 👩‍💻</h2>
 
-- Java
-
-- Java API for reading CSV files
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Fernanda-Kipper"><img src="https://avatars.githubusercontent.com/u/61896274?s=400&u=bac194016ea8fdb8890dda2ccb39581f60c54dcc&v=4" width="100px;" alt=""/><br /><sub><b>Fernanda Kipper</b></sub></td>
+   <td align="center"><a href="https://github.com/Vinigperuzzi"><img src="https://avatars.githubusercontent.com/u/88754301?v=4" width="100px;" alt=""/><br /><sub><b>Vinicius Peruzzi</b></sub></td>
+   </tr>
+<table>
 
 <h2 id="clone">Clone</h2>
 
