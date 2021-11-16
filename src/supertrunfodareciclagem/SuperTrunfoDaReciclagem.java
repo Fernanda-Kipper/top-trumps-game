@@ -2,15 +2,19 @@ package supertrunfodareciclagem;
 import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Arrays;
     public class SuperTrunfoDaReciclagem { 
-        public static Jogador[] defineRodada(Jogador[] players, Jogador Vencedor, Jogador Perdedor){
-            Carta cartaVencedor = Vencedor.getCarta();
-            Carta cartaPerdedor = Perdedor.getCarta();
-            Vencedor.incluir(cartaVencedor);
-            Vencedor.incluir(cartaPerdedor);
+        public static Jogador[] defineRodada(Jogador[] players, Jogador Vencedor, Jogador Perdedor, Carta[] cartasNaMesa, int contCartas){
+            //atribui ao vencedor todas as cartas que estavam na mesa
+            for(int i = 0; i <= contCartas; i++){
+                Vencedor.incluir(cartasNaMesa[i]);
+            }
+
+            //remove as cartas da rodada que já foram dadas ao vencedor
             Vencedor.excluir();
             Perdedor.excluir();
             
+            //retorna jogadores para a atribuição e atualização das cartas
             players[0] = Vencedor;
             players[1] = Perdedor;
             return players;
@@ -63,6 +67,11 @@ import java.util.Scanner;
                 perdedorDaRodada = player1;            
             }
             
+            // declara cartas na mesa
+            // máximo 32 cartas pois é o tamanho do baralho
+            int contCartas = 0;
+            Carta[] cartasNaMesa = new Carta[32];
+            
             // enquanto o jogo não acabou
             int fimDeJogo = 0;
             while (fimDeJogo < 1) {
@@ -70,14 +79,20 @@ import java.util.Scanner;
                 System.out.println("O jogador: " + vencedorDaRodada.nome() + " tem a vez, sua carta é: \n");
                 System.out.println(vencedorDaRodada.getCarta().toString());
 
-                System.out.println("Qual atributo o jogador deseja escolher: \n\t[1]Cor\n\t[2]Decomposição\n\t[3]Reciclagem\n\t[4]Ataque\n");
+                System.out.println("Qual atributo o jogador deseja escolher: \n\t[1]Cor\n\t[2]Decomposição\n\t[3]Reciclagem\n\t[4]Ataque\n\t[5]Sair");
                 int escolha = ler.nextInt();
 
                 int retorno = -1;
                 rodadas++;
+               
                 
+                // pega as cartas de cada jogador e coloca na mesa
                 Carta cartaVencedor = vencedorDaRodada.getCarta();
                 Carta cartaPerdedor = perdedorDaRodada.getCarta();
+                cartasNaMesa[contCartas] = cartaVencedor;
+                contCartas++;
+                cartasNaMesa[contCartas] = cartaPerdedor;
+                contCartas++;
                 
                 // realiza a comparação de acordo com o atributo escolhido pelo jogador
                 switch (escolha) {
@@ -93,6 +108,9 @@ import java.util.Scanner;
                     case 4: 
                         retorno = cartaVencedor.comparaAtaque(cartaPerdedor);    
                         break;
+                    case 5:
+                        retorno = -1;
+                        fimDeJogo = 1;
                     default:
                         System.out.println("Você precisa escolher entre uma das opções válidas!!\n");
                         break;
@@ -107,8 +125,8 @@ import java.util.Scanner;
                 if(retorno == 1){
                     // vencedor da rodada passada venceu novamente
                     
-                    System.out.println(vencedorDaRodada.nome() + "VENCEU NOVAMENTE!"); 
-                    players = defineRodada(players, vencedorDaRodada, perdedorDaRodada);
+                    System.out.println(vencedorDaRodada.nome() + " VENCEU NOVAMENTE!"); 
+                    players = defineRodada(players, vencedorDaRodada, perdedorDaRodada, cartasNaMesa, contCartas);
                     if(vencedorDaRodada.nome() == player1.nome()){
                         // Jogador 1 era o "vencedorDaRodada", continua sendo vencedor
                         player1 = players[0];
@@ -118,11 +136,15 @@ import java.util.Scanner;
                         player1 = players[1];
                         player2 = players[0];
                     }
+                    
+                    //zera contagem de cartas e cartas na mesa
+                    contCartas = 0;
+                    Arrays.fill(cartasNaMesa, null);
                 }
                 else if(retorno == 0){
                     // perdedor da rodada passada venceu
                     System.out.println(perdedorDaRodada.nome() + " VENCEU ESSA RODADA!\n"); 
-                    players = defineRodada(players, perdedorDaRodada, vencedorDaRodada);
+                    players = defineRodada(players, perdedorDaRodada, vencedorDaRodada, cartasNaMesa, contCartas);
  
                     if(perdedorDaRodada.nome() == player2.nome()){ 
                         // Jogador 2 era o "perdedorDaRodada", agora vencedor
@@ -141,7 +163,15 @@ import java.util.Scanner;
                         vencedorDaRodada = player1;
                         perdedorDaRodada = player2;
                     }
+
+                    //zera contagem de cartas e cartas na mesa
+                    contCartas = 0;
+                    Arrays.fill(cartasNaMesa, null);
                 } else {
+                    // caso tenha ocorrido empate
+                    //retira a carta de ambos, que já estão na mesa e continua o jogo
+                    player1.excluir();
+                    player2.excluir();
                     System.out.println("EMPATE\n");
                 }
                 
