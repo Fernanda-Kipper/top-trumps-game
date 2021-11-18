@@ -12,7 +12,7 @@ package supertrunfodareciclagem;
 
         @Override
         public String toString() {
-            return "=======================================================================================================\n\tCarta: " + " codigo: " + codigo + ", nome: " + nome + "\n\tdescricao: " + descricao + " \n=======================================================================================================\n\n\ttipo: " + tipo + ", \tcor: " + cor + ", \tdecomposicao: " + decomposicao + ", \tataque: " + ataque + "\n\n=======================================================================================================\n\n";
+            return "=======================================================================================================\n\tCarta: " + " codigo: " + codigo + ", nome: " + nome + "\n\tdescricao: " + descricao + " \n=======================================================================================================\n\n\ttipo: " + tipo + ", \tcor: " + cor + ", \tdecomposicao: " + decomposicao + ", \tataque: " + ataque + ", \treciclavel: " + this.ehReciclavel() +"\n\n=======================================================================================================\n\n";
         }
         
         public int comparaMegaWinner(Carta carta2){

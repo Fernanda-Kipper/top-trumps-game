@@ -5,14 +5,14 @@ import java.util.Scanner;
 import java.util.Arrays;
     public class SuperTrunfoDaReciclagem { 
         public static Jogador[] defineRodada(Jogador[] players, Jogador Vencedor, Jogador Perdedor, Carta[] cartasNaMesa, int contCartas){
-            //atribui ao vencedor todas as cartas que estavam na mesa
-            for(int i = 0; i <= contCartas; i++){
-                Vencedor.incluir(cartasNaMesa[i]);
-            }
-
-            //remove as cartas da rodada que já foram dadas ao vencedor
+            //remove as cartas da rodada do topo do baralho de ambos
             Vencedor.excluir();
             Perdedor.excluir();
+            
+            //atribui ao vencedor todas as cartas que estavam na mesa
+            for(int i = 0; i < contCartas; i++){
+                Vencedor.incluir(cartasNaMesa[i]);
+            }
             
             //retorna jogadores para a atribuição e atualização das cartas
             players[0] = Vencedor;
@@ -34,6 +34,9 @@ import java.util.Arrays;
             System.out.println("Por favor, insira o nome do 2º jogador: ");
             nome = ler.nextLine();
             Jogador player2 = new Jogador(nome);
+            
+            System.out.println("Como você deseja jogar?\n\t[0]Simulção\n\t[1]Manual");
+            int manual = ler.nextInt();
             
             Baralho gameDeck = new Baralho();
             gameDeck.embaralhaBaralho();
@@ -78,9 +81,14 @@ import java.util.Arrays;
                 
                 System.out.println("\n\n\t\tO jogador: " + vencedorDaRodada.nome() + " tem a vez, sua carta é: \n");
                 System.out.println(vencedorDaRodada.getCarta().toString());
-
-                System.out.println("Qual atributo o jogador deseja escolher: \n\t[1]Cor\n\t[2]Decomposição\n\t[3]Reciclagem\n\t[4]Ataque\n\t[5]Sair");
-                int escolha = ler.nextInt();
+                
+                int escolha;
+                if(manual == 1){
+                    System.out.println("Qual atributo o jogador deseja escolher: \n\t[1]Cor\n\t[2]Decomposição\n\t[3]Reciclagem\n\t[4]Ataque\n\t[5]Sair");
+                    escolha = ler.nextInt();
+                } else {
+                    escolha = random.nextInt(5);
+                }
 
                 int retorno = -1;
                 rodadas++;
@@ -124,7 +132,6 @@ import java.util.Arrays;
                 Jogador[] players = new Jogador[2];
                 if(retorno == 1){
                     // vencedor da rodada passada venceu novamente
-                    
                     System.out.println(vencedorDaRodada.nome() + " VENCEU NOVAMENTE!"); 
                     players = defineRodada(players, vencedorDaRodada, perdedorDaRodada, cartasNaMesa, contCartas);
                     if(vencedorDaRodada.nome() == player1.nome()){
@@ -174,6 +181,10 @@ import java.util.Arrays;
                     player2.excluir();
                     System.out.println("EMPATE\n");
                 }
+                
+                // mostra o número de cartas de cada jogador após a rodada
+                System.out.println(player1.nome() + " seu número de cartas: " + player1.numeroDeCartas());
+                System.out.println(player2.nome() + " seu número de cartas: " + player2.numeroDeCartas());
                 
                 // finaliza o jogo quando um dos jogadores não possui mais cartas
                 if (player1.numeroDeCartas() == 0 || player2.numeroDeCartas() == 0){
