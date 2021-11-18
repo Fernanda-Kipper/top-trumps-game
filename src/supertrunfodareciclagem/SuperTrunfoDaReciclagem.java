@@ -84,10 +84,10 @@ import java.util.Arrays;
                 
                 int escolha;
                 if(manual == 1){
-                    System.out.println("Qual atributo o jogador deseja escolher: \n\t[1]Cor\n\t[2]Decomposição\n\t[3]Reciclagem\n\t[4]Ataque\n\t[5]Sair");
+                    System.out.println("Qual atributo o jogador deseja escolher: \n\t[0]Cor\n\t[1]Decomposição\n\t[2]Reciclagem\n\t[3]Ataque\n\t[4]Sair");
                     escolha = ler.nextInt();
                 } else {
-                    escolha = random.nextInt(5);
+                    escolha = random.nextInt(4);
                 }
 
                 int retorno = -1;
@@ -104,19 +104,19 @@ import java.util.Arrays;
                 
                 // realiza a comparação de acordo com o atributo escolhido pelo jogador
                 switch (escolha) {
-                    case 1:
+                    case 0:
                         retorno = cartaVencedor.comparaCor(cartaPerdedor);
                         break;
-                    case 2:
+                    case 1:
                         retorno = cartaVencedor.comparaDecomposicao(cartaPerdedor);
                         break;
-                    case 3: 
+                    case 2: 
                         retorno = cartaVencedor.comparaReciclavel(cartaPerdedor);   
                         break;
-                    case 4: 
+                    case 3: 
                         retorno = cartaVencedor.comparaAtaque(cartaPerdedor);    
                         break;
-                    case 5:
+                    case 4:
                         retorno = -1;
                         fimDeJogo = 1;
                     default:
